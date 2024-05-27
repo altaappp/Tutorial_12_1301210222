@@ -8,7 +8,7 @@ Route::get('/lat1/m2', 	'App\Http\Controllers\Lat1Controller@method2');
 use App\Http\Controllers\ProductController;
 
 // Routes for displaying products
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products', [ProductController::class, 'index']);
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
 Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
 
@@ -48,3 +48,6 @@ Route::get('/logout', function (){
 use App\Http\Controllers\SiteController;
 
 Route::get('/create-user', [SiteController::class, 'createUser'])->name('user.create');
+Route::get('/test', function () {
+    return 'Test Route';
+});

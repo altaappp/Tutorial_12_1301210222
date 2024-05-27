@@ -1,8 +1,8 @@
 <?php
-// routes/api.php
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
 use App\Http\Controllers\Lat1Controller;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SiteController;
@@ -18,4 +18,8 @@ Route::resource('products', ProductController::class)->except([
     'create', 'edit'
 ]);
 
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::resource('/products', [ProductController::class, 'index']);
+Route::get('/test', function () {
+    return 'Test Route';
+});
+
